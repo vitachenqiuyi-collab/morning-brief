@@ -7,7 +7,8 @@ on:
 
 permissions:
   contents: write
-
+env:
+  FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
 jobs:
   generate-and-send:
     runs-on: ubuntu-latest
@@ -31,9 +32,7 @@ jobs:
           git push
 
       - name: Send to Feishu
-        if: ${{ secrets.FEISHU_WEBHOOK_URL != '' }}
-        env:
-          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+      if: env.FEISHU_WEBHOOK_URL != ''
         run: |
           node --input-type=module <<'EOF'
           import fs from "node:fs";
