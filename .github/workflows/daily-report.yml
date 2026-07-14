@@ -7,10 +7,9 @@ on:
 
 permissions:
   contents: write
-env:
-  FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+
 jobs:
-  generate-and-send:
+  daily:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,45 +31,20 @@ jobs:
           git push
 
       - name: Send to Feishu
-      if: env.FEISHU_WEBHOOK_URL != ''
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
         run: |
-          node --input-type=module <<'EOF'
-          import fs from "node:fs";
-
+          if [ -z "$FEISHU_WEBHOOK_URL" ]; then exit 0; fi
+          node <<'NODE' > payload.json
+          const fs = require("fs");
           const report = JSON.parse(fs.readFileSync("data/today.json", "utf8"));
-          const labels = {
-            flight: "航班",
-            visa: "签证",
-            international: "国际",
-            other: "其他"
-          };
-
-          const lines = [
-            `【${report.title}】${report.date}`,
-            `头条：${report.headline.title}`,
-            report.headline.summary || "",
-            report.headline.url || ""
-          ];
-
+          const labels = { flight: "航班", visa: "签证", international: "国际", other: "其他" };
+          const lines = [`【${report.title}】${report.date}`, `头条：${report.headline.title}`, report.headline.summary || "", report.headline.url || ""];
           for (const [key, label] of Object.entries(labels)) {
             const stories = report.categories?.[key] || [];
-            if (!stories.length) continue;
-            lines.push(`\n【${label}】`);
-            for (const story of stories) {
-              lines.push(`• ${story.title}`);
-              if (story.summary) lines.push(story.summary);
-              if (story.url) lines.push(story.url);
-            }
+            if (stories.length) lines.push(`\n【${label}】`);
+            for (const story of stories) lines.push(`• ${story.title}`, story.summary || "", story.url || "");
           }
-
-          const response = await fetch(process.env.FEISHU_WEBHOOK_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              msg_type: "text",
-              content: { text: lines.filter(Boolean).join("\n") }
-            })
-          });
-
-          if (!response.ok) throw new Error(`Feishu webhook failed: ${response.status}`);
-          EOF
+          console.log(JSON.stringify({ msg_type: "text", content: { text: lines.filter(Boolean).join("\n") } }));
+          NODE
+          curl -fsS -X POST -H "Content-Type: application/json" --data @payload.json "$FEISHU_WEBHOOK_URL"
