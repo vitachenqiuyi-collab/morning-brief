@@ -1,8 +1,9 @@
 name: Daily Morning Brief
 
 on:
-  schedule:
-    - cron: "0 1 * * *"
+ schedule:
+  - cron: "0 1 * * *"
+  - cron: "30 5 * * *"
   workflow_dispatch:
 
 permissions:
