@@ -1,55 +1,42 @@
 {
   "title": "环球出行晨报",
   "date": "2026-07-14",
-  "generatedAt": "2026年7月14日（官方来源核对）",
+  "generatedAt": "2026年7月14日 10:16 (Asia/Shanghai)",
   "headline": {
-    "title": "李强会见朝鲜内阁总理朴泰成",
-    "source": "外交部",
-    "publishedLabel": "7/11",
-    "url": "https://www.mfa.gov.cn/zyxw/202607/t20260711_11980134.shtml",
-    "summary": "李强在北京同来华正式访问的朝鲜内阁总理朴泰成会谈，双方表示将加强战略协调与合作。"
+    "title": "上半年3.69亿人次出入境 创历史新高",
+    "source": "国家移民管理局",
+    "url": "https://www.nia.gov.cn/n897453/c1789835/content.html",
+    "summary": "7月10日，国家移民管理局召开新闻发布会，发布2026年上半年移民管理工作主要数据。",
+    "publishedAt": 1783656000000,
+    "category": "visa",
+    "publishedLabel": "7/10",
+    "score": 10
   },
   "categories": {
     "flight": [],
     "visa": [
       {
-        "title": "上半年全国出入境人员达3.69亿人次",
+        "title": "上半年3.69亿人次出入境 创历史新高",
         "source": "国家移民管理局",
-        "publishedLabel": "7/10",
         "url": "https://www.nia.gov.cn/n897453/c1789835/content.html",
-        "summary": "国家移民管理局发布上半年数据：全国累计查验出入境人员3.69亿人次，同比增长10.8%，并持续扩大免签和通关便利举措。"
+        "summary": "7月10日，国家移民管理局召开新闻发布会，发布2026年上半年移民管理工作主要数据。",
+        "publishedAt": 1783656000000,
+        "category": "visa",
+        "publishedLabel": "7/10",
+        "score": 10
       },
       {
-        "title": "新西兰更新中国护照NZeTA试点数据",
-        "source": "新西兰移民局",
-        "publishedLabel": "7/9 更新",
-        "url": "https://www.immigration.govt.nz/about-us/news-centre/new-zealand-electronic-travel-authority-nzeta/",
-        "summary": "持中国护照、从澳大利亚出发且持有效合资格澳签的旅客，可通过NZeTA赴新西兰停留最多3个月；该试点仍在执行。"
+        "title": "一图读懂！2026年上半年移民管理工作主要数据",
+        "source": "国家移民管理局",
+        "url": "https://www.nia.gov.cn/n897453/c1789806/content.html",
+        "summary": "",
+        "publishedAt": 1783656000000,
+        "category": "visa",
+        "publishedLabel": "7/10",
+        "score": 10
       }
     ],
-    "international": [
-      {
-        "title": "中纳发布构建命运共同体联合声明",
-        "source": "外交部",
-        "publishedLabel": "7/10",
-        "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202607/t20260710_11979822.shtml",
-        "summary": "中纳两国发表联合声明，围绕双边关系、务实合作和国际事务协调达成共识，纳米比亚总统于7月5日至11日对华国事访问。"
-      },
-      {
-        "title": "王毅结束对挪威等北欧四国访问",
-        "source": "外交部",
-        "publishedLabel": "7/8",
-        "url": "https://www.mfa.gov.cn/wjbzhd/202607/t20260708_11977348.shtml",
-        "summary": "王毅结束对丹麦、瑞典、芬兰、挪威四国访问；中方欢迎挪威担任2026年服贸会主宾国，双方将继续推进交流合作。"
-      },
-      {
-        "title": "所罗门群岛外长霍尼普维拉访华",
-        "source": "外交部",
-        "publishedLabel": "7/10",
-        "url": "https://www.mfa.gov.cn/fyrbt_673021/jzhsl_673025/202607/t20260710_11979532.shtml",
-        "summary": "所罗门群岛外交和外贸部长霍尼普维拉于7月10日至15日访华，双方将就双边关系及共同关心的国际和地区问题交换意见。"
-      }
-    ],
+    "international": [],
     "other": []
   }
 }
