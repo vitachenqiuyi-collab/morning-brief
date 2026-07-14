@@ -104,9 +104,19 @@ const stories = crawled.flatMap(result => result.status === "fulfilled" ? result
   seen.add(key); return true;
 }).map(story => ({ ...story, publishedLabel: new Date(story.publishedAt).toLocaleDateString("zh-CN", { month: "numeric", day: "numeric" }), score: score(story, now) })).sort((a, b) => b.score - a.score);
 
-const categories = { flight: [], visa: [], international: [], other: [] };
-for (const story of stories) if (categories[story.category].length < 4) categories[story.category].push(story);
+// 网络或官网暂时不可访问时，保留上一版，不用空白晨报覆盖网站。
+if (!stories.length) {
+  console.log("未读取到可用资讯，保留上一版晨报。");
+  process.exit(0);
+}
+
 const headline = stories[0] || { title: "近 7 天未检测到指定官网更新", source: "系统", publishedLabel: "今日", summary: "" };
+const categories = { flight: [], visa: [], international: [], other: [] };
+// 头条独立展示，避免在下方分类卡片中重复出现。
+for (const story of stories) {
+  if (story.url && story.url === headline.url) continue;
+  if (categories[story.category].length < 4) categories[story.category].push(story);
+}
 const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(new Date());
 const generatedAt = new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", dateStyle: "medium", timeStyle: "short", hour12: false }).format(new Date());
 await mkdir("data", { recursive: true });

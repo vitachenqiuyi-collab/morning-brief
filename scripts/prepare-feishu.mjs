@@ -14,7 +14,7 @@ if (!fresh.length) {
   const lead = fresh[0];
   lines.push(`头条：${lead.title}`, lead.summary || "", lead.url, "");
   for (const [key, label] of Object.entries(categoryNames)) {
-    const stories = (current.categories?.[key] || []).filter(story => story.url && !oldUrls.has(story.url));
+    const stories = (current.categories?.[key] || []).filter(story => story.url && story.url !== lead.url && !oldUrls.has(story.url));
     if (!stories.length) continue;
     lines.push(`【${label}】`);
     for (const story of stories) lines.push(`• ${story.title}`, story.summary || "", story.url);
