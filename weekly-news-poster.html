@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一周资讯海报模板</title>
+  <style>
+    :root { --ink:#ffffff; --paper:#1a75d1; --muted:#dcecff; --line:rgba(255,255,255,.26); --accent:#ff8a00; --yellow:#ffd166; }
+    * { box-sizing:border-box; } body { margin:0; background:#dce8f5; color:var(--ink); font-family:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif; }
+    .studio { max-width:1200px; margin:0 auto; padding:24px; display:grid; grid-template-columns:340px 1fr; gap:24px; }
+    .controls { background:#fff; color:#15222d; padding:20px; border-radius:14px; box-shadow:0 8px 24px #22334416; align-self:start; position:sticky; top:20px; }
+    .controls input, .controls textarea { color:#15222d; }.controls button { background:#1767ce; color:#fff; }.controls button.secondary { background:#e7f1ff; color:#1557a7; }.controls button.export-all { background:#075fb9; }.export-status { display:block; min-height:18px; margin-top:8px; color:#657383; font-size:11px; line-height:1.4; }
+    .image-controls { margin-top:18px; padding-top:14px; border-top:1px solid #e9e1d7; }.upload-hint { font-size:11px!important; margin:0 0 8px!important; }.upload-row { display:flex; align-items:center; gap:8px; padding:7px 0; margin:0; color:#4f5c69; }.upload-row input { padding:5px; font-size:11px; background:#fff; }
+    .story-editors { margin-top:18px; padding-top:14px; border-top:1px solid #e9e1d7; }.add-card { margin:7px 0 8px; padding:7px 9px; font-size:12px; background:#e7f1ff!important; color:#1557a7!important; }.story-title-row { display:grid; grid-template-columns:25px 1fr 34px auto; align-items:center; gap:6px; padding:5px 0; margin:0; color:#4f5c69; font-size:12px; }.story-title-row input { padding:6px 8px; font-size:12px; }.story-title-row span { font-size:10px; color:#89939d; text-align:right; }.story-title-row i { color:#89939d; font-size:10px; font-style:normal; white-space:nowrap; }.delete-card { margin:0!important; padding:5px 7px!important; background:#fff0ef!important; color:#cf3b32!important; font-size:11px!important; }
+    .body-editors { margin-top:18px; padding-top:14px; border-top:1px solid #e9e1d7; }.body-editor-row { display:grid; grid-template-columns:25px 1fr 38px; align-items:start; gap:6px; padding:5px 0; margin:0; color:#4f5c69; font-size:12px; }.body-editor-row textarea { min-height:68px; padding:7px 8px; font-size:12px; resize:vertical; }.body-editor-row span { padding-top:7px; font-size:10px; color:#89939d; text-align:right; }
+    .flight-editors { margin-top:18px; padding-top:14px; border-top:1px solid #e9e1d7; }.flight-editor-row { display:grid; grid-template-columns:24px 1fr auto; gap:6px; align-items:start; padding:5px 0; color:#4f5c69; font-size:12px; }.flight-fields { display:grid; gap:5px; }.flight-fields input { padding:6px 8px; font-size:12px; }.flight-editor-row button { margin:0!important; padding:5px 7px!important; background:#fff0ef!important; color:#cf3b32!important; font-size:11px!important; }.flight-editors .add-card:disabled { background:#d9e0e7!important; color:#7c8791!important; cursor:not-allowed; }.fixed-note { padding:8px 9px; border-radius:7px; background:#f1f5f9; color:#5f6d7a; font-size:11px; line-height:1.5; }
+    .discount-controls { margin-top:18px; padding-top:14px; border-top:1px solid #e9e1d7; }.discount-controls textarea { min-height:110px; }.discount-controls .upload-row { margin:4px 0; }
+    .highlight-tools { margin-top:18px; padding-top:14px; border-top:1px solid #e9e1d7; }.highlight-add { display:grid; grid-template-columns:1fr 70px auto; gap:6px; }.highlight-add #selected-highlight { display:block; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:1px solid #ddd5c9; border-radius:8px; padding:8px; color:#69737d; font-size:12px; background:#fffdf9; }.highlight-add select { padding:7px 8px; font-size:12px; }.highlight-add button { margin:0; padding:7px 9px; font-size:12px; }.highlight-add button:disabled { background:#cfd7df!important; cursor:not-allowed; }.highlight-list { display:flex; flex-wrap:wrap; gap:6px; margin-top:9px; }.highlight-chip { display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:4px 7px; font-size:11px; }.highlight-chip.yellow { background:#fff2b8; color:#705600; }.highlight-chip.blue { background:#dceeff; color:#075fb9; }.highlight-chip.red { background:#ffe0dd; color:#b72f28; }.highlight-chip button { margin:0; padding:0; border:0; background:transparent!important; color:inherit!important; font-size:15px; line-height:1; }
+    .text-highlight { padding:0 .12em; border-radius:.18em; box-decoration-break:clone; -webkit-box-decoration-break:clone; }.text-highlight.yellow { background:#ffcc00; color:#1d1d1f!important; }.text-highlight.blue { background:#bfe2ff; color:#075fb9!important; }.text-highlight.red { background:#ffb7b1; color:#9a1c16!important; }
+    .highlight-popover { position:fixed; z-index:20; display:flex; align-items:center; gap:3px; padding:5px; border:1px solid #d7d7dc; border-radius:11px; background:#fff; box-shadow:0 10px 25px #1d1d1f28; }.highlight-popover[hidden] { display:none; }.highlight-popover button { display:inline-flex; align-items:center; gap:4px; margin:0; padding:6px 7px; border-radius:7px; background:#f5f5f7; color:#1d1d1f; font-size:11px; }.highlight-popover button i { width:10px; height:10px; border-radius:50%; background:#ffcc00; }.highlight-popover button[data-highlight-color="blue"] i { background:#0071e3; }.highlight-popover button[data-highlight-color="red"] i { background:#ff3b30; }.highlight-popover .clear-highlights { background:transparent; color:#767680; }
+    .controls h1 { font-size:20px; margin:0 0 8px; }.controls p { color:var(--muted); font-size:13px; line-height:1.6; margin:0 0 18px; }
+    label { display:block; font-size:12px; font-weight:700; letter-spacing:.06em; margin:15px 0 6px; } input, textarea { width:100%; border:1px solid #ddd5c9; border-radius:8px; padding:10px; font:14px/1.55 inherit; color:var(--ink); background:#fffdf9; }
+    textarea { min-height:360px; resize:vertical; } .hint { font-size:11px; line-height:1.55; color:var(--muted); margin-top:6px; }
+    button { border:0; border-radius:8px; padding:11px 13px; font-weight:700; cursor:pointer; background:var(--ink); color:white; margin:16px 8px 0 0; } button.secondary { background:#ece5d8; color:var(--ink); }
+    .poster-wrap { overflow:auto; padding-bottom:16px; }.poster { width:720px; min-height:1018px; margin:auto; padding:45px 45px 34px; background:radial-gradient(circle at 94% 4%,#65cdf8 0,transparent 27%),radial-gradient(circle at 1% 96%,#0955bb 0,transparent 35%),linear-gradient(140deg,#197bd9 0%,#1767ce 58%,#0d59bd 100%); position:relative; overflow:hidden; box-shadow:0 12px 34px #0d4a984f; isolation:isolate; }
+    .poster::before { content:""; position:absolute; inset:0; z-index:-1; opacity:.18; background-image:linear-gradient(rgba(255,255,255,.45) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.45) 1px,transparent 1px); background-size:34px 34px; mask-image:linear-gradient(to bottom,black,transparent 70%); }
+    .kicker { color:#e5f4ff; font:700 12px/1 Arial,sans-serif; letter-spacing:.18em; margin:2px 0 24px; }.topline { width:46px; height:8px; border-radius:4px; background:var(--accent); margin-bottom:18px; box-shadow:0 0 15px #ff9f1c99; }
+    .title-row { display:flex; align-items:start; justify-content:space-between; gap:18px; padding-bottom:19px; }.week { font:800 48px/1.08 "Noto Serif SC","Songti SC",serif; letter-spacing:.04em; margin:0; max-width:430px; text-shadow:0 3px 12px #08427a88; }.date { color:#f4fbff; font:700 12px/1.6 Arial,sans-serif; text-align:right; white-space:nowrap; padding:7px 10px; border:1px solid #e3f5ff77; border-radius:16px; background:#e8f7ff20; backdrop-filter:blur(9px); }
+    .intro { display:flex; align-items:center; gap:12px; padding:13px 15px; margin-bottom:14px; border:1px solid #e5f8ff54; border-radius:12px; background:#daf1ff1e; box-shadow:inset 0 1px #ffffff55; backdrop-filter:blur(10px); }.intro b { color:var(--yellow); font-size:15px; }.intro span { font-size:12px; color:var(--muted); }
+    ol { list-style:none; padding:0; margin:0; counter-reset:news; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }.item { counter-increment:news; min-height:157px; padding:17px 15px 15px; border:1px solid #e1f3ff55; border-radius:13px; background:linear-gradient(140deg,#eff8ff38,#b7dcff1a); box-shadow:inset 0 1px #ffffff48,0 8px 18px #073f8326; backdrop-filter:blur(13px); position:relative; overflow:hidden; }.item::before { content:counter(news, decimal-leading-zero); color:#ffe6a4; font:800 12px/1 Arial,sans-serif; letter-spacing:.11em; display:block; margin-bottom:11px; }.item:first-child { grid-column:1 / -1; min-height:205px; padding:26px 25px; border:2px solid #ffcf668f; background:linear-gradient(120deg,#0857b8c4,#2c9ae2b8); box-shadow:inset 0 1px #ffffff70,0 12px 26px #073d8580; }.item:first-child::after { content:"今日头条"; position:absolute; top:18px; right:20px; color:#8b4000; background:linear-gradient(90deg,#ffd866,#ff9d18); border-radius:15px; padding:7px 12px; font:800 12px Arial,sans-serif; box-shadow:0 4px 10px #71410044; }.item p { margin:0; font-size:16px; font-weight:700; line-height:1.55; letter-spacing:.01em; text-shadow:0 1px 4px #08427a77; }.item:first-child p { font-size:26px; line-height:1.45; max-width:500px; }.item .over { color:#fff0a6; font-size:12px; margin-top:5px; }
+    .footer { margin-top:18px; border-top:1px solid #dbedff66; padding-top:12px; display:flex; justify-content:space-between; gap:10px; color:#dbeaff; font:11px/1.5 Arial,sans-serif; letter-spacing:.04em; }.count { color:#ffe6a4; font-weight:700; }
+
+    /* Apple-inspired editorial treatment: generous whitespace, restrained color and soft depth. */
+    .poster { font-family:"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif; padding:48px 44px 34px; background:#f5f5f7; box-shadow:0 18px 52px #4a6b8a3d; }
+    .poster::before { display:none; }
+    .brand-lockup { position:absolute; top:34px; right:32px; width:325px; height:72px; overflow:hidden; }.brand-lockup img { width:330px; height:143px; max-width:none; display:block; transform:translate(-4px,-43px); mix-blend-mode:multiply; }.topline { width:38px; height:7px; background:#ff8a00; border-radius:99px; margin-bottom:19px; box-shadow:none; }
+    .kicker { color:#2674c9; font:700 11px/1 Arial,sans-serif; letter-spacing:.14em; margin:0 0 22px; }
+    .title-row { align-items:start; padding-bottom:25px; }.week { max-width:450px; color:#1d1d1f; font:700 62px/.98 "SF Pro Display","PingFang SC","Helvetica Neue",sans-serif; letter-spacing:-.07em; text-shadow:none; }.date { color:#4f5965; background:#fff; border:0; border-radius:20px; padding:11px 15px; box-shadow:0 5px 18px #52759a20; font:700 16px/1.5 Arial,sans-serif; }
+    .intro { border:0; border-radius:16px; background:#fff; box-shadow:0 8px 24px #55749317; padding:16px 18px; margin-bottom:16px; backdrop-filter:none; }.intro b { color:#1771cb; font-size:18px; }.intro span { color:#4d5965; font-size:14px; font-weight:700; }
+    ol { gap:13px; }.item { min-height:150px; padding:18px 17px; border:0; border-radius:20px; background:#fff; box-shadow:0 8px 22px #526f8e18; backdrop-filter:none; }.item::before { color:#5d89b5; font-size:11px; margin-bottom:12px; }.item p { color:#24262b; font-size:16px; line-height:1.5; text-shadow:none; letter-spacing:-.015em; }.item:first-child { min-height:305px; padding:30px 34px 28px; border:0; border-radius:25px; background:#0071e3; box-shadow:0 14px 30px #2563a34d; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }.item:first-child::before { color:#d7efff; font-size:12px; margin-bottom:24px; }.item:first-child::after { top:25px; right:28px; color:#5d4300; background:#ffcc00; border-radius:99px; padding:7px 12px; font-size:11px; box-shadow:none; }.item:first-child p { max-width:100%; padding-right:0; color:#fff; font-size:36px; line-height:1.28; letter-spacing:-.055em; text-shadow:none; overflow-wrap:anywhere; }
+    /* Headline uses a full row. If the remaining cards are odd, the final one fills both columns. */
+    .item:last-child:nth-child(even) { grid-column:1 / -1; min-height:128px; display:grid; grid-template-columns:72px 1fr; align-items:center; gap:0; }.item:last-child:nth-child(even)::before { margin:0; }.item:last-child:nth-child(even) p { max-width:490px; }
+    .item:nth-child(2),.item:nth-child(5) { background:#0071e3; }.item:nth-child(2)::before,.item:nth-child(5)::before { color:#bfe5ff; }.item:nth-child(2) p,.item:nth-child(5) p { color:#fff; }.item:nth-child(3),.item:nth-child(6) { background:#ffcc00; }.item:nth-child(3)::before,.item:nth-child(6)::before { color:#795d00; }.item:nth-child(3) p,.item:nth-child(6) p { color:#1d1d1f; }.item:nth-child(4) { background:#ff3b30; }.item:nth-child(4)::before { color:#ffd4d1; }.item:nth-child(4) p { color:#fff; }.item .over { color:#b45400; }.footer { border-top:0; margin-top:20px; color:#72808e; }.count { color:#1670ca; }
+    /* Cover: blue-led, with yellow as emphasis and a single red accent. */
+    .poster .item:not(:first-child) { min-height:138px; background:#fff!important; border-left:5px solid #bfdcf8; box-shadow:0 7px 18px #52718e14; display:flex!important; flex-direction:column; justify-content:center; }.poster .item:not(:first-child) p { color:#24262b!important; font-size:15px; }.poster .item:not(:first-child)::before { color:#1771cb!important; margin-bottom:8px; }.poster .item:nth-child(3) { border-left-color:#ffcc00; }.poster .item:nth-child(4) { border-left-color:#ff3b30; }.poster .item:nth-child(6) { border-left-color:#ffcc00; }.poster .item:last-child:nth-child(even) { background:#f7fbff!important; border-left-color:#1771cb; align-items:center; }.poster .item:last-child:nth-child(even)::before { position:absolute; left:18px; }
+    .poster .footer { align-items:end; margin-top:22px; }.cover-footer-title,.card-footer-title { display:flex; flex-direction:column; gap:3px; color:#1d1d1f; font:700 15px/1.2 "PingFang SC",sans-serif; letter-spacing:-.025em; }.cover-footer-title em,.card-footer-title em { color:#1771cb; font-style:normal; }.cover-footer-title small,.card-footer-title small { color:#6d747d; font:600 11px/1.35 "PingFang SC",sans-serif; letter-spacing:.01em; }
+    .card-pages { display:grid; gap:32px; margin-top:36px; }.single-card { width:720px; min-height:1018px; padding:48px 46px 36px; background:#fff; color:#1d1d1f; box-shadow:0 16px 42px #58748e33; display:flex; flex-direction:column; }.single-card-head { display:flex; justify-content:space-between; align-items:start; }.single-card-head div:first-child { display:flex; flex-direction:column; }.single-month { color:#6e737a; font:700 16px/1 Arial,sans-serif; letter-spacing:.08em; }.single-card-head strong { font:700 164px/.78 "SF Pro Display","Times New Roman",serif; letter-spacing:-.1em; margin-left:-10px; }.single-date { text-align:right; font:700 22px/1.45 "PingFang SC",sans-serif; }.single-date span { color:#6e737a; font-size:14px; font-weight:500; }.single-card h2 { margin:20px 0 26px auto; max-width:550px; font:700 46px/1.12 "SF Pro Display","PingFang SC",sans-serif; letter-spacing:-.06em; text-align:right; }.card-media { width:100%; aspect-ratio:3 / 2; height:auto; overflow:hidden; background:#f5f5f7; }.card-media img { width:100%; height:100%; object-fit:cover; display:block; }.image-placeholder { width:100%; height:100%; display:grid; place-items:center; color:#fff; font:600 15px "PingFang SC",sans-serif; }.image-placeholder.blue { background:#0071e3; }.image-placeholder.yellow { background:#ffcc00; color:#5b4700; }.image-placeholder.red { background:#ff3b30; }.card-caption { margin:24px 0 0; max-width:560px; font:600 21px/1.48 "Songti SC","STSong",serif; letter-spacing:-.025em; }.card-detail { margin:15px 0 0; max-width:560px; color:#61676d; font:400 14px/1.65 "PingFang SC",sans-serif; }.single-card footer { margin-top:auto; padding-top:22px; display:flex; justify-content:space-between; align-items:end; border-top:1px solid #d2d2d7; color:#6e737a; font:12px/1.4 Arial,sans-serif; letter-spacing:.04em; }.single-card.blue strong { color:#0071e3; }.single-card.yellow strong { color:#e7a500; }.single-card.red strong { color:#ff3b30; }.flight-upload { color:#6e737a; font-size:12px; }.flight-card .card-media { aspect-ratio:3 / 2; height:auto; background:#f5f5f7; padding:18px; }.flight-details { height:100%; display:flex; flex-direction:column; justify-content:center; gap:11px; }.flight-row { padding:15px 17px; border-radius:16px; background:#fff; display:grid; grid-template-columns:112px 1fr; gap:4px 12px; box-shadow:0 4px 12px #0b3a6410; }.flight-row b { color:#0071e3; font-size:14px; grid-row:span 2; align-self:center; }.flight-row span { color:#1d1d1f; font-weight:700; font-size:17px; }.flight-row em { color:#6e737a; font-style:normal; font-size:12px; }.flight-card .card-caption { font-size:18px; }.flight-card .card-detail { font-size:14px; }
+    .discount-card { width:720px; height:960px; min-height:960px; margin-top:32px; padding:42px 28px 24px; background:#f7fbff; color:#1d1d1f; box-shadow:0 16px 42px #58748e33; display:flex; flex-direction:column; overflow:hidden; }.discount-card h2 { margin:0; color:#075fb9; font:700 50px/1.02 "SF Pro Display","PingFang SC",sans-serif; letter-spacing:-.07em; }.discount-card .discount-copy { flex-shrink:0; margin:16px 0 16px; padding:14px 16px; border-radius:14px; white-space:pre-line; color:#40505e; background:#fff; box-shadow:0 4px 14px #52718e16; font:600 16px/1.42 "PingFang SC",sans-serif; }.discount-grid { display:grid; grid-template-columns:292px minmax(0,1fr); gap:20px; flex:1 1 auto; min-height:0; align-items:stretch; }.discount-left { min-height:0; display:grid; grid-template-rows:minmax(0,1fr) minmax(0,1fr); gap:8px; align-items:stretch; }.discount-visual { min-height:0; display:flex; flex-direction:column; gap:4px; }.discount-visual b { flex-shrink:0; color:#075fb9; font:700 14px/1.2 "PingFang SC",sans-serif; }.discount-image { min-height:0; overflow:hidden; border-radius:18px; background:#0071e3; }.discount-left .discount-image.square { flex:1 1 0; width:100%; height:auto; aspect-ratio:auto; }.discount-image.portrait { flex:1 1 0; width:100%; height:auto; aspect-ratio:auto; background:#ffcc00; }.discount-image img { width:100%; height:100%; object-fit:cover; display:block; }.discount-placeholder { width:100%; height:100%; display:grid; place-items:center; color:#fff; font:700 14px "PingFang SC",sans-serif; }.discount-right .discount-placeholder { color:#5d4300; }.discount-code { flex-shrink:0; margin-top:10px; border-radius:18px; padding:10px 20px 12px; background:#0071e3; color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2px; text-align:center; }.discount-code span { font:600 14px "PingFang SC",sans-serif; }.discount-code strong { font:800 50px/.95 Arial,sans-serif; letter-spacing:.08em; }
+    /* Unified 3:4 card canvas: calm blue cover, white breathing room and restrained accents. */
+    .poster,.single-card { width:720px; height:960px; min-height:960px; }
+    .poster { padding:32px 24px 26px; background:#e9f4ff; display:flex; flex-direction:column; }.poster .brand-lockup { top:22px; right:14px; width:255px; height:58px; }.poster .brand-lockup img { width:270px; height:117px; transform:translate(-3px,-35px); }.poster .topline { margin-bottom:11px; flex-shrink:0; }.poster .kicker { margin-bottom:10px; font-size:10px; flex-shrink:0; }.poster .week { color:#075fb9; font-size:76px; }.poster .title-row { padding-bottom:20px; flex-shrink:0; }.poster .date { position:absolute; z-index:2; top:96px; right:26px; color:#155b9e; padding:8px 12px; font-size:14px; }.poster .intro { justify-content:center; padding:16px 19px; margin-bottom:14px; background:#fff; flex-shrink:0; text-align:center; }.poster .intro b { font-size:24px; }.poster .intro span { color:#1467b8; font-size:20px; font-weight:800; letter-spacing:.04em; }.poster ol { flex:1; min-height:0; gap:10px; grid-template-rows:var(--cover-grid-rows,1.6fr 1fr 1fr .8fr); }.poster .item:first-child { min-height:0; padding:24px 28px; }.poster .item:first-child::before { margin-bottom:16px; }.poster .item:first-child p { font-size:34px; line-height:1.25; }.poster .item:not(:first-child) { min-height:0; padding:14px 16px; }.poster .item:not(:first-child) p { color:#0b4f95!important; font-size:18px; font-weight:800; line-height:1.4; }.poster .item:not(:first-child)::before { color:#0071e3!important; }.poster .item:last-child,.poster .item.wide-regular { grid-column:1 / -1; min-height:0; background:#f7fbff!important; border-left-color:#1771cb; align-items:center; }.poster .item:last-child::before,.poster .item.wide-regular::before { position:absolute; left:18px; }.poster .item:last-child p { color:#075fb9!important; font-size:18px!important; }.poster .footer { display:none; }
+    .poster .week { font-size:94px; line-height:.94; }.poster .title-row { padding-bottom:24px; }
+    .single-card { padding:28px 28px 24px; overflow:hidden; justify-content:space-between; gap:10px; }.single-card-head { display:grid; grid-template-columns:1fr auto; align-items:start; min-height:112px; flex-shrink:0; }.single-card-head strong { margin:4px 0 0; font-size:112px; line-height:.72; letter-spacing:-.08em; }.single-month { margin:0; font-size:13px; }.single-date { padding-top:8px; font-size:22px; line-height:1.25; text-align:right; }.card-logo { width:228px; height:54px; overflow:hidden; padding:0; }.card-logo img { width:240px; height:104px; max-width:none; display:block; transform:translate(-3px,-31px); mix-blend-mode:multiply; }.single-card h2 { width:100%; max-width:none; margin:0; font-size:36px; line-height:1.15; text-align:left; letter-spacing:-.045em; }.card-media { width:100%; max-width:none; margin:0; flex-shrink:0; }.card-caption { margin:0; font-size:18px; line-height:1.4; }.card-detail { margin:0; font-size:13px; line-height:1.5; }.single-card footer { margin-top:0; padding-top:14px; flex-shrink:0; }.flight-card .card-media { width:100%; max-width:none; background:transparent; padding:0; }.flight-card .card-caption { font-size:16px; }.flight-card .flight-row { grid-template-columns:155px 1fr; gap:5px 14px; }.flight-card .flight-row b { align-self:center; }.flight-card .flight-row span,.flight-card .flight-row em { text-align:left; }
+    @media (max-width:850px) { .studio { grid-template-columns:1fr; padding:12px; }.controls { position:static; }.poster-wrap { margin:0 -12px; }.poster { transform-origin:top left; } }
+    @media print { @page { size:720px 960px; margin:0; } body { background:none; }.studio { display:block; padding:0; }.controls { display:none; }.poster-wrap { overflow:visible; padding:0; }.poster,.single-card,.discount-card { box-shadow:none; margin:0; width:720px; height:960px; min-height:960px; break-after:page; page-break-after:always; }.card-pages { display:block; margin:0; }.discount-card { height:auto; min-height:960px; margin-top:0; }.discount-card:last-child { break-after:auto; page-break-after:auto; } }
+  </style>
+</head>
+<body>
+  <main class="studio">
+    <section class="controls" aria-label="海报编辑器">
+      <h1>一周资讯海报 · 固定模板</h1>
+      <p>按原顺序粘贴，一行一条。模板会保留顺序，并标记超过 40 字的条目。</p>
+      <label for="poster-title">海报标题（固定）</label><input id="poster-title" value="一周资讯" readonly aria-readonly="true" />
+      <label for="poster-date">日期 / 期号</label><input id="poster-date" value="2026.05.19" />
+      <label for="poster-subtitle">副标题</label><input id="poster-subtitle" value="签证政策 · 航线动态 · 出行提醒" />
+      <label for="news-input">总封面 / 卡片正文（每行 1 条，50 字以内）</label>
+      <textarea id="news-input">泰国批准取消60天免签：拟恢复约30天标准，执行时间待公布
+香港航空、香港快运下调燃油附加费：部分航线降至339港币
+IATA认可玻利维亚电子签：第三国赴玻航司可接受E-VISA
+近期国际航班变化汇总</textarea>
+      <div class="hint">这里的每行文字会同时显示在总封面和对应资讯卡正文中；建议句式：<b>主体 + 动作 + 关键差异</b>。</div>
+      <div class="story-editors" id="story-editors" aria-label="资讯卡标题编辑"></div>
+      <div class="body-editors" id="body-editors" aria-label="资讯卡正文编辑"></div>
+      <div class="flight-editors" id="flight-editors" aria-label="航班清单编辑"></div>
+      <div class="image-controls" id="image-controls" aria-label="资讯配图上传"></div>
+      <div class="discount-controls" aria-label="折扣卡片编辑">
+        <label>折扣卡片（3:4）</label>
+        <label for="discount-title">标题</label><input id="discount-title" value="本周租车特惠折扣" maxlength="18" />
+        <label for="discount-copy">副标题内容</label><textarea id="discount-copy">① 境外租车券包蕞高减①①⑧⑧
+② 车行专属折扣8折起，热门目的地包括但不限于美新澳/东南亚/欧洲...
+③ 新西兰租车低至⑦④/天起，美国旧金山低至②⑦⑥/天起
+④ 发小红书笔记赢现金蕞高⑥O⑥O元红|包奖励</textarea>
+        <label for="discount-left-one-label">左上图片文字</label><input id="discount-left-one-label" value="① 打开租租车APP" />
+        <label for="discount-left-two-label">左下图片文字</label><input id="discount-left-two-label" value="② 搜索 RED61" />
+        <label for="discount-right-label">右侧图片文字</label><input id="discount-right-label" value="速速领取租车券包" />
+        <label for="discount-code">折扣码</label><input id="discount-code" value="RED61" maxlength="20" />
+        <label class="upload-row">左上正方形图片 <input id="discount-left-one-image" type="file" accept="image/*" /></label>
+        <label class="upload-row">左下正方形图片 <input id="discount-left-two-image" type="file" accept="image/*" /></label>
+        <label class="upload-row">右侧 9:16 图片 <input id="discount-right-image" type="file" accept="image/*" /></label>
+      </div>
+      <button id="copy-btn">复制条目</button><button class="secondary" id="print-btn">打印 / 导出 PDF</button><button class="secondary" id="export-cover-btn">导出封面 JPG</button><button class="export-all" id="export-all-btn">导出全部 JPG</button><span class="export-status" id="export-status" aria-live="polite"></span>
+    </section>
+    <section class="poster-wrap" aria-label="一周资讯海报预览">
+      <article class="poster" id="poster">
+        <div class="brand-lockup" aria-label="租租车"><img src="assets/zuzuche-logo-reference.png" alt="租租车 全球自驾 轻松租车" /></div>
+        <div class="topline"></div>
+        <div class="title-row"><h2 class="week" id="view-title">一周资讯</h2><div class="date" id="view-date">2026.05.19</div></div>
+      <div class="intro"><span id="view-subtitle">签证政策 · 航线动态 · 出行提醒</span></div>
+        <ol id="news-list"></ol>
+        <footer class="footer"><span class="cover-footer-title"><b>租租车</b><em>[一周资讯]</em><small>出行政策 · 航线动态 · 旅行优惠</small></span><span><span class="count" id="news-count">0</span> ITEMS · 每条 ≤ 50 字</span></footer>
+      </article>
+      <section class="card-pages" id="card-pages" aria-label="单条资讯卡片"></section>
+      <article class="discount-card" id="discount-card" aria-label="本周租车特惠折扣"></article>
+    </section>
+  </main>
+  <div class="highlight-popover" id="highlight-popover" role="toolbar" aria-label="文字高亮选项" hidden>
+    <button type="button" data-highlight-color="yellow" title="黄色高亮"><i></i>高亮</button>
+    <button type="button" data-highlight-color="blue" title="蓝色高亮"><i></i></button>
+    <button type="button" data-highlight-color="red" title="红色高亮"><i></i></button>
+    <button type="button" class="clear-highlights" id="clear-highlights">清除</button>
+  </div>
+  <script src="assets/html2canvas.min.js"></script>
+  <script>
+    const $ = id => document.getElementById(id);
+    const images = [];
+    const highlights = [];
+    const discountImages = { leftOne: '', leftTwo: '', right: '' };
+    let selectedHighlightText = '';
+    const flightTitle = '近期国际航班变化汇总';
+    const flightDisclaimer = '航班时刻均为当地时间；具体执行以航空公司实际公布为准。';
+    const cardTitles = ['泰国取消60天免签','香港航司下调燃油费','玻利维亚电子签获认可',flightTitle];
+    const cardBodies = [
+      '5月19日，泰国内阁批准取消60天免签入境政策，拟恢复此前约30天免签标准。具体生效日期尚未披露，请以泰方正式公告为准。',
+      '香港航空自5月18日起下调燃油附加费：日本、韩国航线降50港币至339港币；欧洲、中东等长途航线降198港币至1362港币。香港快运自5月16日起，除往返内地航段外，其他香港出发航段由389港币降至339港币。',
+      '根据IATA最新更新，玻利维亚电子签证（E-VISA）已获正式认可。旅客从第三国飞往玻利维亚时，航空公司将接受该签证；出行前仍应核对签证申请要求及航司规定。',
+      flightDisclaimer
+    ];
+    const flightDetails = [
+      ['喜马拉雅航空', '深圳 → 德满都', '6月5日开航 · 周一、五、日；6月下旬加周四'],
+      ['印度航空', '德里 → 上海浦东', '预计停飞至8月 · 6—8月航班陆续取消']
+    ];
+    const esc = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    const escapeRegExp = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    function highlighted(value = '') {
+      const active = highlights.filter(item => item.text);
+      if (!active.length) return esc(String(value));
+      const colors = new Map(active.map(item => [item.text, item.color]));
+      const pattern = active.map(item => escapeRegExp(item.text)).sort((a, b) => b.length - a.length).join('|');
+      const matcher = new RegExp(pattern, 'g');
+      let output = '', cursor = 0;
+      String(value).replace(matcher, (match, offset) => {
+        output += esc(String(value).slice(cursor, offset));
+        output += `<mark class="text-highlight ${colors.get(match)}">${esc(match)}</mark>`;
+        cursor = offset + match.length;
+        return match;
+      });
+      return output + esc(String(value).slice(cursor));
+    }
+    function hideHighlightPopover() { $('highlight-popover').hidden = true; }
+    function showHighlightPopover(input, event) {
+      const popover = $('highlight-popover');
+      const rect = input.getBoundingClientRect();
+      const x = event?.clientX || rect.right - 150;
+      const y = event?.clientY || rect.top;
+      popover.style.left = `${Math.min(window.innerWidth - 205, Math.max(8, x + 8))}px`;
+      popover.style.top = `${Math.min(window.innerHeight - 46, Math.max(8, y - 42))}px`;
+      popover.hidden = false;
+    }
+    function captureTextSelection(input, event) {
+      const start = input.selectionStart;
+      const end = input.selectionEnd;
+      const selected = typeof start === 'number' && typeof end === 'number' ? input.value.slice(start, end).trim() : '';
+      if (selected) { selectedHighlightText = selected; showHighlightPopover(input, event); }
+    }
+    function bindTextSelection(input) {
+      ['select','mouseup','keyup'].forEach(eventName => input.addEventListener(eventName, event => captureTextSelection(input, event)));
+    }
+    function normalizeRows() {
+      const rawRows = $('news-input').value.split(/\r?\n/).map(x => x.trim()).filter(Boolean);
+      const rows = rawRows.filter(row => row !== flightTitle);
+      rows.push(flightTitle);
+      while (cardTitles.length < rows.length) cardTitles.splice(cardTitles.length - 1, 0, '新资讯标题');
+      while (cardBodies.length < rows.length) cardBodies.splice(cardBodies.length - 1, 0, '请填写资讯卡正文。');
+      while (images.length < rows.length) images.splice(images.length - 1, 0, '');
+      cardTitles.length = rows.length; cardBodies.length = rows.length; images.length = rows.length;
+      cardTitles[rows.length - 1] = flightTitle;
+      return rows;
+    }
+    function addCard() {
+      const rows = normalizeRows();
+      rows.splice(rows.length - 1, 0, '新资讯：请填写主题、动作与关键差异');
+      cardTitles.splice(rows.length - 1, 0, '新资讯标题');
+      cardBodies.splice(rows.length - 1, 0, '请填写资讯卡正文。');
+      images.splice(rows.length - 1, 0, '');
+      $('news-input').value = rows.join('\n'); refresh();
+    }
+    function deleteCard(index) {
+      const rows = normalizeRows();
+      if (index >= rows.length - 1 || rows.length <= 2) return;
+      if (images[index]) URL.revokeObjectURL(images[index]);
+      rows.splice(index, 1); cardTitles.splice(index, 1); cardBodies.splice(index, 1); images.splice(index, 1);
+      $('news-input').value = rows.join('\n'); refresh();
+    }
+    function renderImageControls(rows) {
+      const flightIndex = rows.length - 1;
+      $('image-controls').innerHTML = `<label>单条资讯配图（可选）</label><p class="upload-hint">上传后会显示在对应的单条资讯卡中；航班汇总卡固定为航线清单，不需要配图。</p>${rows.map((_, index) => index === flightIndex ? `<div class="upload-row flight-upload">${String(index + 1).padStart(2, '0')} · 航线汇总卡（固定最后一位，无需配图）</div>` : `<label class="upload-row">${String(index + 1).padStart(2, '0')} <input type="file" accept="image/*" data-image-index="${index}" /></label>`).join('')}`;
+      $('image-controls').querySelectorAll('input[type="file"]').forEach(input => input.addEventListener('change', event => {
+        const index = Number(event.target.dataset.imageIndex);
+        if (images[index]) URL.revokeObjectURL(images[index]);
+        images[index] = event.target.files[0] ? URL.createObjectURL(event.target.files[0]) : '';
+        renderCards(rows);
+      }));
+    }
+    function renderStoryEditors(rows) {
+      const flightIndex = rows.length - 1;
+      $('story-editors').innerHTML = `<label>资讯卡标题（每条 ≤ 15 字）</label><button type="button" class="add-card" id="add-card">＋ 添加资讯卡</button>${rows.map((_, index) => `<label class="story-title-row">${String(index + 1).padStart(2, '0')} <input type="text" maxlength="15" value="${esc(cardTitles[index] || '')}" data-title-index="${index}" ${index === flightIndex ? 'readonly' : ''}/><span>${(cardTitles[index] || '').length}/15</span>${index === flightIndex ? '<i>固定最后</i>' : `<button type="button" class="delete-card" data-delete-index="${index}">删除</button>`}</label>`).join('')}`;
+      $('add-card').addEventListener('click', addCard);
+      $('story-editors').querySelectorAll('button[data-delete-index]').forEach(button => button.addEventListener('click', () => deleteCard(Number(button.dataset.deleteIndex))));
+      $('story-editors').querySelectorAll('input[data-title-index]').forEach(input => {
+        bindTextSelection(input);
+        input.addEventListener('input', event => {
+          const index = Number(event.target.dataset.titleIndex);
+          cardTitles[index] = event.target.value;
+          event.target.parentElement.querySelector('span').textContent = `${event.target.value.length}/15`;
+          renderCards($('news-input').value.split(/\r?\n/).map(x => x.trim()).filter(Boolean));
+        });
+      });
+    }
+    function renderBodyEditors(rows) {
+      const flightIndex = rows.length - 1;
+      $('body-editors').innerHTML = `<label>资讯卡正文（每条 ≤ 250 字）</label><p class="upload-hint">只显示在对应的单条资讯卡中，不影响总封面。</p>${rows.map((_, index) => index === flightIndex ? `<div class="body-editor-row"><span>${String(index + 1).padStart(2, '0')}</span><div class="fixed-note">固定提示：${esc(flightDisclaimer)}</div></div>` : `<label class="body-editor-row">${String(index + 1).padStart(2, '0')} <textarea maxlength="250" data-body-index="${index}">${esc(cardBodies[index] || '')}</textarea><span>${(cardBodies[index] || '').length}/250</span></label>`).join('')}`;
+      $('body-editors').querySelectorAll('textarea[data-body-index]').forEach(input => {
+        bindTextSelection(input);
+        input.addEventListener('input', event => {
+          const index = Number(event.target.dataset.bodyIndex);
+          cardBodies[index] = event.target.value;
+          event.target.parentElement.querySelector('span').textContent = `${event.target.value.length}/250`;
+          renderCards($('news-input').value.split(/\r?\n/).map(x => x.trim()).filter(Boolean));
+        });
+      });
+    }
+    function renderFlightEditors(rows) {
+      const flightLimitReached = flightDetails.length >= 5;
+      $('flight-editors').innerHTML = `<label>航班清单（固定为最后一张资讯卡）</label><p class="upload-hint">可新增、删除或修改每条航班信息；最多 5 条，下方提示语固定不可修改。</p><button type="button" class="add-card" id="add-flight" ${flightLimitReached ? 'disabled' : ''}>${flightLimitReached ? '最多 5 条' : '＋ 添加航班'}</button>${flightDetails.map((flight, index) => `<div class="flight-editor-row"><span>${String(index + 1).padStart(2, '0')}</span><div class="flight-fields"><input value="${esc(flight[0])}" data-flight-index="${index}" data-flight-field="0" placeholder="航空公司" /><input value="${esc(flight[1])}" data-flight-index="${index}" data-flight-field="1" placeholder="起点 → 目的地" /><input value="${esc(flight[2])}" data-flight-index="${index}" data-flight-field="2" placeholder="生效日期 · 班次" /></div><button type="button" data-delete-flight="${index}">删除</button></div>`).join('')}`;
+      $('add-flight').addEventListener('click', () => { if (flightDetails.length >= 5) return; flightDetails.push(['新航空公司', '起点 → 目的地', '生效日期 · 班次']); renderFlightEditors(rows); renderCards(rows); });
+      $('flight-editors').querySelectorAll('input[data-flight-index]').forEach(input => {
+        bindTextSelection(input);
+        input.addEventListener('input', event => { flightDetails[Number(event.target.dataset.flightIndex)][Number(event.target.dataset.flightField)] = event.target.value; renderCards(rows); });
+      });
+      $('flight-editors').querySelectorAll('button[data-delete-flight]').forEach(button => button.addEventListener('click', () => { flightDetails.splice(Number(button.dataset.deleteFlight), 1); renderFlightEditors(rows); renderCards(rows); }));
+    }
+    function renderCards(rows) {
+      const date = $('poster-date').value.trim() || '本期';
+      $('card-pages').innerHTML = rows.map((item, index) => {
+        const color = ['blue','yellow','red'][index % 3];
+        const isFlight = index === rows.length - 1;
+        const media = isFlight ? `<div class="flight-details">${flightDetails.map(([airline, route, schedule]) => `<div class="flight-row"><b>${highlighted(airline)}</b><span>${highlighted(route)}</span><em>${highlighted(schedule)}</em></div>`).join('')}</div>` : images[index] ? `<img src="${images[index]}" alt="第 ${index + 1} 条资讯配图" />` : `<div class="image-placeholder ${color}"><span>上传配图</span></div>`;
+        const detail = isFlight ? flightDisclaimer : cardBodies[index];
+        return `<article class="single-card ${color}${isFlight ? ' flight-card' : ''}"><header class="single-card-head"><div><span class="single-month">WEEKLY</span><strong>${String(index + 1).padStart(2, '0')}</strong></div><div class="single-date card-logo"><img src="assets/zuzuche-logo-reference.png" alt="租租车" /></div></header><h2>${highlighted(cardTitles[index] || item)}</h2><div class="card-media">${media}</div><p class="card-caption">${highlighted(item)}</p>${detail ? `<p class="card-detail">${highlighted(detail)}</p>` : ''}<footer><span class="card-footer-title"><b>租租车</b><em>[一周资讯]</em><small>出行政策 · 航线动态 · 旅行优惠</small></span><span>${String(index + 1).padStart(2, '0')} / ${String(rows.length).padStart(2, '0')}</span></footer></article>`;
+      }).join('');
+    }
+    function renderDiscount() {
+      const title = $('discount-title').value.trim() || '本周租车特惠折扣';
+      const copy = $('discount-copy').value.trim();
+      const leftOneLabel = $('discount-left-one-label').value.trim() || '① 打开租租车APP';
+      const leftTwoLabel = $('discount-left-two-label').value.trim() || '② 搜索 RED61';
+      const rightLabel = $('discount-right-label').value.trim() || '速速领取租车券包';
+      const code = $('discount-code').value.trim() || 'RED61';
+      const visual = (key, shape, placeholder) => discountImages[key] ? `<img src="${discountImages[key]}" alt="${esc(placeholder)}" />` : `<div class="discount-placeholder">上传图片</div>`;
+      $('discount-card').innerHTML = `<h2>${highlighted(title)}</h2><p class="discount-copy">${highlighted(copy)}</p><section class="discount-grid"><div class="discount-left"><div class="discount-visual"><b>${highlighted(leftOneLabel)}</b><div class="discount-image square">${visual('leftOne', 'square', leftOneLabel)}</div></div><div class="discount-visual"><b>${highlighted(leftTwoLabel)}</b><div class="discount-image square">${visual('leftTwo', 'square', leftTwoLabel)}</div></div></div><div class="discount-visual discount-right"><b>${highlighted(rightLabel)}</b><div class="discount-image portrait">${visual('right', 'portrait', rightLabel)}</div></div></section><div class="discount-code"><span>本周专属折扣码</span><strong>${highlighted(code)}</strong></div>`;
+    }
+    function bindDiscountControls() {
+      ['discount-title','discount-copy','discount-left-one-label','discount-left-two-label','discount-right-label','discount-code'].forEach(id => {
+        const input = $(id); bindTextSelection(input); input.addEventListener('input', renderDiscount);
+      });
+      [['discount-left-one-image','leftOne'],['discount-left-two-image','leftTwo'],['discount-right-image','right']].forEach(([id, key]) => $(id).addEventListener('change', event => {
+        if (discountImages[key]) URL.revokeObjectURL(discountImages[key]);
+        discountImages[key] = event.target.files[0] ? URL.createObjectURL(event.target.files[0]) : '';
+        renderDiscount();
+      }));
+    }
+    function refresh() {
+      $('view-title').textContent = $('poster-title').value.trim() || '一周资讯';
+      $('view-date').textContent = $('poster-date').value.trim();
+      $('view-subtitle').textContent = $('poster-subtitle').value.trim();
+      const rows = normalizeRows();
+      $('news-input').value = rows.join('\n');
+      const normalCount = Math.max(0, rows.length - 2);
+      const wideRegularIndex = normalCount % 2 ? rows.length - 2 : -1;
+      const coverRows = ['1.6fr', ...Array(Math.ceil(normalCount / 2)).fill('1fr'), '.8fr'];
+      $('news-list').style.setProperty('--cover-grid-rows', coverRows.join(' '));
+      $('news-list').innerHTML = rows.map((item, index) => `<li class="item${index === wideRegularIndex ? ' wide-regular' : ''}"><div><p>${highlighted(item)}</p>${item.length > 50 ? `<div class="over">当前 ${item.length} 字，请压缩至 50 字以内</div>` : ''}</div></li>`).join('');
+      $('news-count').textContent = rows.length;
+      renderStoryEditors(rows);
+      renderBodyEditors(rows);
+      renderFlightEditors(rows);
+      renderImageControls(rows);
+      renderCards(rows);
+    }
+    ['poster-title','poster-date','poster-subtitle','news-input'].forEach(id => { $(id).addEventListener('input', refresh); bindTextSelection($(id)); });
+    $('copy-btn').addEventListener('click', async () => { await navigator.clipboard.writeText($('news-input').value); $('copy-btn').textContent = '已复制'; setTimeout(() => $('copy-btn').textContent = '复制条目', 1200); });
+    $('highlight-popover').querySelectorAll('button[data-highlight-color]').forEach(button => button.addEventListener('click', () => {
+      const text = selectedHighlightText;
+      const color = button.dataset.highlightColor;
+      if (!text || highlights.some(item => item.text === text)) return;
+      highlights.push({ text, color }); selectedHighlightText = ''; hideHighlightPopover(); refresh(); renderDiscount();
+    }));
+    $('clear-highlights').addEventListener('click', () => { highlights.length = 0; selectedHighlightText = ''; hideHighlightPopover(); refresh(); renderDiscount(); });
+    document.addEventListener('mousedown', event => { if (!event.target.closest('.highlight-popover') && !event.target.closest('input, textarea')) hideHighlightPopover(); });
+    function exportTargets() {
+      return [
+        { element: $('poster'), name: 'weekly-cover' },
+        ...Array.from($('card-pages').querySelectorAll('.single-card')).map((element, index) => ({ element, name: `weekly-card-${String(index + 1).padStart(2, '0')}` })),
+        { element: $('discount-card'), name: 'weekly-discount' }
+      ];
+    }
+    async function waitForCardImages(element) {
+      await Promise.all(Array.from(element.querySelectorAll('img')).map(image => image.complete ? Promise.resolve() : new Promise(resolve => {
+        image.addEventListener('load', resolve, { once:true });
+        image.addEventListener('error', resolve, { once:true });
+      })));
+    }
+    async function exportJpg(target, status) {
+      if (!window.html2canvas) throw new Error('图片导出组件未加载');
+      await document.fonts?.ready;
+      await waitForCardImages(target.element);
+      const canvas = await window.html2canvas(target.element, {
+        backgroundColor:'#ffffff', scale:2, useCORS:false, allowTaint:false, logging:false, scrollX:0, scrollY:-window.scrollY,
+        onclone: documentClone => Array.from(documentClone.images).filter(image => image.src.startsWith('file:')).forEach(image => image.remove())
+      });
+      const blob = await new Promise((resolve, reject) => canvas.toBlob(value => value ? resolve(value) : reject(new Error('无法生成 JPG 文件')), 'image/jpeg', .94));
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.href = url;
+      link.download = `${target.name}.jpg`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      status.textContent = `已导出 ${target.name}.jpg`;
+    }
+    async function runExport(targets, button) {
+      const status = $('export-status');
+      button.disabled = true;
+      try {
+        for (let index = 0; index < targets.length; index += 1) {
+          status.textContent = `正在导出 ${index + 1} / ${targets.length}…`;
+          await exportJpg(targets[index], status);
+        }
+        status.textContent = targets.length > 1 ? `已导出全部 ${targets.length} 张 JPG` : '封面 JPG 已导出';
+      } catch (error) {
+        console.error(error);
+        status.textContent = `导出失败：${error?.message || '请重试。'}`;
+      } finally {
+        button.disabled = false;
+      }
+    }
+    $('export-cover-btn').addEventListener('click', () => runExport([exportTargets()[0]], $('export-cover-btn')));
+    $('export-all-btn').addEventListener('click', () => runExport(exportTargets(), $('export-all-btn')));
+    $('print-btn').addEventListener('click', () => window.print());
+    bindDiscountControls();
+    hideHighlightPopover();
+    refresh();
+    renderDiscount();
+  </script>
+</body>
+</html>

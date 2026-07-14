@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中国相关国际出行与国际动态每日晨报" />
+    <title>环球出行晨报</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <p class="eyebrow">DAILY INTELLIGENCE · CHINA FOCUS</p>
+        <div class="masthead-row">
+          <div>
+            <h1>环球出行晨报</h1>
+            <p id="date-line" class="date-line">正在加载今日晨报…</p>
+          </div>
+          <span class="edition">PUBLIC EDITION</span>
+        </div>
+      </header>
+
+      <section class="lead" aria-labelledby="lead-title">
+        <div class="section-label">头条 / TOP STORY</div>
+        <article id="lead-story" class="lead-story"></article>
+      </section>
+
+      <section class="briefing-grid" aria-label="分类简报">
+        <section class="brief-card flight"><div class="card-heading"><span>01</span><h2>航班</h2><p>FLIGHTS</p></div><div id="flight-list" class="story-list"></div></section>
+        <section class="brief-card visa"><div class="card-heading"><span>02</span><h2>签证</h2><p>VISAS</p></div><div id="visa-list" class="story-list"></div></section>
+        <section class="brief-card international"><div class="card-heading"><span>03</span><h2>国际</h2><p>INTERNATIONAL</p></div><div id="international-list" class="story-list"></div></section>
+        <section class="brief-card other"><div class="card-heading"><span>04</span><h2>其他</h2><p>OTHER</p></div><div id="other-list" class="story-list"></div></section>
+      </section>
+
+      <footer><span id="updated-at">资料加载中</span><span>信息仅供参考，请以航空公司、使领馆及政府部门的正式公告为准。</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
