@@ -12,40 +12,31 @@ permissions:
 jobs:
   daily:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Generate morning brief
-        run: npm run generate
-
+        run: |
+          cp data/today.json data/previous.json
+          npm run generate
+          npm run prepare-feishu
       - name: Save updated report
         run: |
           git config user.name "Morning Brief Bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/today.json
-          git diff --staged --quiet || git commit -m "chore: refresh daily brief"
-          git push
-
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: refresh daily brief"
+            git pull --rebase origin main
+            git push
+          fi
       - name: Send to Feishu
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
         run: |
           if [ -z "$FEISHU_WEBHOOK_URL" ]; then exit 0; fi
-          node <<'NODE' > payload.json
-          const fs = require("fs");
-          const report = JSON.parse(fs.readFileSync("data/today.json", "utf8"));
-          const labels = { flight: "航班", visa: "签证", international: "国际", other: "其他" };
-          const lines = [`【${report.title}】${report.date}`, `头条：${report.headline.title}`, report.headline.summary || "", report.headline.url || ""];
-          for (const [key, label] of Object.entries(labels)) {
-            const stories = report.categories?.[key] || [];
-            if (stories.length) lines.push(`\n【${label}】`);
-            for (const story of stories) lines.push(`• ${story.title}`, story.summary || "", story.url || "");
-          }
-          console.log(JSON.stringify({ msg_type: "text", content: { text: lines.filter(Boolean).join("\n") } }));
-          NODE
-          curl -fsS -X POST -H "Content-Type: application/json" --data @payload.json "$FEISHU_WEBHOOK_URL"
+          curl -fsS -X POST "$FEISHU_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            --data @data/feishu-payload.json
