@@ -1,20 +1,30 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-08-22",
-  "generatedAt": "2026年8月22日 13:49 (Asia/Shanghai)",
+  "date": "2026-08-23",
+  "generatedAt": "2026年8月23日 10:18 (Asia/Shanghai)",
   "headline": {
-    "title": "Skip to main content",
-    "source": "冰岛移民局",
-    "url": "https://island.is/en/o/directorate-of-immigration/news#main-content",
-    "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-    "publishedAt": 1787025600000,
+    "title": "新增吉尔吉斯斯坦、越南为240小时过境免签和海南30天入境免签政策适用国家",
+    "source": "国家移民管理局",
+    "url": "https://www.nia.gov.cn/n897453/c1796264/content.html",
+    "summary": "新增吉尔吉斯斯坦、越南为240小时过境免签和海南30天入境免签政策适用国家",
+    "publishedAt": 1787198400000,
     "category": "visa",
-    "publishedLabel": "8/18",
-    "score": 10
+    "publishedLabel": "8/20",
+    "score": 56
   },
   "categories": {
     "flight": [],
     "visa": [
+      {
+        "title": "Skip to main content",
+        "source": "冰岛移民局",
+        "url": "https://island.is/en/o/directorate-of-immigration/news#main-content",
+        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1787025600000,
+        "category": "visa",
+        "publishedLabel": "8/18",
+        "score": 10
+      },
       {
         "title": "Individuals",
         "source": "冰岛移民局",
@@ -39,16 +49,6 @@
         "title": "Appointments",
         "source": "冰岛移民局",
         "url": "https://island.is/en/o/directorate-of-immigration/appointments",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1787025600000,
-        "category": "visa",
-        "publishedLabel": "8/18",
-        "score": 10
-      },
-      {
-        "title": "Applications and forms",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/applications-and-forms",
         "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
         "publishedAt": 1787025600000,
         "category": "visa",
