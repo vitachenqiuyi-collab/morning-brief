@@ -1,20 +1,61 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-09-01",
-  "generatedAt": "2026年9月1日 18:15 (Asia/Shanghai)",
+  "date": "2026-09-02",
+  "generatedAt": "2026年9月2日 13:15 (Asia/Shanghai)",
   "headline": {
-    "title": "国家移民管理局关于暂停签发前往西藏自治区日喀则市电子边境管理区通行证的公告",
-    "source": "国家移民管理局",
-    "url": "https://www.nia.gov.cn/n897453/c1797217/content.html",
-    "summary": "国家移民管理局关于暂停签发前往西藏自治区日喀则市电子边境管理区通行证的公告",
-    "publishedAt": 1787889600000,
+    "title": "Skip to main content",
+    "source": "冰岛移民局",
+    "url": "https://island.is/en/o/directorate-of-immigration/news#main-content",
+    "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+    "publishedAt": 1788235200000,
     "category": "visa",
-    "publishedLabel": "8/28",
-    "score": 18
+    "publishedLabel": "9/1",
+    "score": 60
   },
   "categories": {
     "flight": [],
-    "visa": [],
+    "visa": [
+      {
+        "title": "Individuals",
+        "source": "冰岛移民局",
+        "url": "https://island.is/minarsidur/",
+        "summary": "Mínar síður Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1788235200000,
+        "category": "visa",
+        "publishedLabel": "9/1",
+        "score": 60
+      },
+      {
+        "title": "Waiting time",
+        "source": "冰岛移民局",
+        "url": "https://island.is/en/o/directorate-of-immigration/waiting-time",
+        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1788235200000,
+        "category": "visa",
+        "publishedLabel": "9/1",
+        "score": 60
+      },
+      {
+        "title": "Appointments",
+        "source": "冰岛移民局",
+        "url": "https://island.is/en/o/directorate-of-immigration/appointments",
+        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1788235200000,
+        "category": "visa",
+        "publishedLabel": "9/1",
+        "score": 60
+      },
+      {
+        "title": "Applications and forms",
+        "source": "冰岛移民局",
+        "url": "https://island.is/en/o/directorate-of-immigration/applications-and-forms",
+        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1788235200000,
+        "category": "visa",
+        "publishedLabel": "9/1",
+        "score": 60
+      }
+    ],
     "international": [],
     "other": []
   }
