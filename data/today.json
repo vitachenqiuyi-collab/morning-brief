@@ -1,20 +1,40 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-09-10",
-  "generatedAt": "2026年9月10日 17:53 (Asia/Shanghai)",
+  "date": "2026-09-11",
+  "generatedAt": "2026年9月11日 13:26 (Asia/Shanghai)",
   "headline": {
-    "title": "Skip to main content",
-    "source": "冰岛移民局",
-    "url": "https://island.is/en/o/directorate-of-immigration/news#main-content",
-    "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-    "publishedAt": 1788840000000,
+    "title": "1至8月4.99亿人次出入境 免签入境外国人同比上升26.8%",
+    "source": "国家移民管理局",
+    "url": "https://www.nia.gov.cn/n897453/c1800846/content.html",
+    "summary": "记者从9月10日在连云港召开的全球公共安全合作论坛（连云港）2026年大会移民管理合作分论坛上获悉，2026年1至8月，全国边检机关累计查验出入境人员4.99亿人次，同比上升8.7%；其中内地居民2.42亿人次、港澳台居民1.96亿人次、外国人6128.7万人次，同比分别上升10%、8.9%、19.5%。入境外国人中免签入境2372万人次，占比77.6%、同比上升26.8%。累计查验出入境交通运输工具2814.8万架（列、艘、辆）次，同比上升15%；其中飞机66.5万架次、列车7.5万列次、船舶…",
+    "publishedAt": 1789012800000,
     "category": "visa",
-    "publishedLabel": "9/8",
-    "score": 32
+    "publishedLabel": "9/10",
+    "score": 68
   },
   "categories": {
     "flight": [],
     "visa": [
+      {
+        "title": "全球公共安全合作论坛（连云港）2026年大会移民管理合作分论坛举办",
+        "source": "国家移民管理局",
+        "url": "https://www.nia.gov.cn/n897453/c1801029/content.html",
+        "summary": "9月9日至10日，全球公共安全合作论坛（连云港）2026年大会移民管理合作分论坛在江苏省连云港市举办。本届分论坛围绕“团结互信 务实合作 共绘全球移民治理新图景”主题，聚焦国际社会对完善全球移民治理体系的期待，就推动全球移民治理体系建设等议题进行深入交流，达成广泛共识。来自64个国家（地区）的移民和出入境部门负责人，7个国际组织和多边机制的代表共290余人出席分论坛。",
+        "publishedAt": 1789012800000,
+        "category": "visa",
+        "publishedLabel": "9/10",
+        "score": 60
+      },
+      {
+        "title": "Skip to main content",
+        "source": "冰岛移民局",
+        "url": "https://island.is/en/o/directorate-of-immigration/news#main-content",
+        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1788840000000,
+        "category": "visa",
+        "publishedLabel": "9/8",
+        "score": 10
+      },
       {
         "title": "Individuals",
         "source": "冰岛移民局",
@@ -23,7 +43,7 @@
         "publishedAt": 1788840000000,
         "category": "visa",
         "publishedLabel": "9/8",
-        "score": 32
+        "score": 10
       },
       {
         "title": "Waiting time",
@@ -33,27 +53,7 @@
         "publishedAt": 1788840000000,
         "category": "visa",
         "publishedLabel": "9/8",
-        "score": 32
-      },
-      {
-        "title": "Appointments",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/appointments",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1788840000000,
-        "category": "visa",
-        "publishedLabel": "9/8",
-        "score": 32
-      },
-      {
-        "title": "Applications and forms",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/applications-and-forms",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1788840000000,
-        "category": "visa",
-        "publishedLabel": "9/8",
-        "score": 32
+        "score": 10
       }
     ],
     "international": [],
