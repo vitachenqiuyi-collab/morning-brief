@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-09-11",
-  "generatedAt": "2026年9月11日 17:52 (Asia/Shanghai)",
+  "date": "2026-09-12",
+  "generatedAt": "2026年9月12日 13:16 (Asia/Shanghai)",
   "headline": {
     "title": "1至8月4.99亿人次出入境 免签入境外国人同比上升26.8%",
     "source": "国家移民管理局",
@@ -15,6 +15,16 @@
   "categories": {
     "flight": [],
     "visa": [
+      {
+        "title": "全球公共安全合作论坛（连云港）2026年大会移民管理合作分论坛主席声明",
+        "source": "国家移民管理局",
+        "url": "https://www.nia.gov.cn/n897453/c1801167/content.html",
+        "summary": "全球公共安全合作论坛（连云港）2026年大会移民管理合作分论坛主席声明",
+        "publishedAt": 1789012800000,
+        "category": "visa",
+        "publishedLabel": "9/10",
+        "score": 32
+      },
       {
         "title": "全球公共安全合作论坛（连云港）2026年大会移民管理合作分论坛举办",
         "source": "国家移民管理局",
@@ -40,16 +50,6 @@
         "source": "冰岛移民局",
         "url": "https://island.is/minarsidur/",
         "summary": "Mínar síður Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1788840000000,
-        "category": "visa",
-        "publishedLabel": "9/8",
-        "score": 10
-      },
-      {
-        "title": "Waiting time",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/waiting-time",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
         "publishedAt": 1788840000000,
         "category": "visa",
         "publishedLabel": "9/8",
