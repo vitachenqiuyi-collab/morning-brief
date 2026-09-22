@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-09-21",
-  "generatedAt": "2026年9月21日 18:52 (Asia/Shanghai)",
+  "date": "2026-09-22",
+  "generatedAt": "2026年9月22日 13:37 (Asia/Shanghai)",
   "headline": {
     "title": "国家移民管理局关于全国推广网上办理外国人旅馆以外住宿登记的公告",
     "source": "国家移民管理局",
@@ -14,48 +14,7 @@
   },
   "categories": {
     "flight": [],
-    "visa": [
-      {
-        "title": "Skip to main content",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/news#main-content",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1789444800000,
-        "category": "visa",
-        "publishedLabel": "9/15",
-        "score": 10
-      },
-      {
-        "title": "Individuals",
-        "source": "冰岛移民局",
-        "url": "https://island.is/minarsidur/",
-        "summary": "Mínar síður Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1789444800000,
-        "category": "visa",
-        "publishedLabel": "9/15",
-        "score": 10
-      },
-      {
-        "title": "Waiting time",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/waiting-time",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1789444800000,
-        "category": "visa",
-        "publishedLabel": "9/15",
-        "score": 10
-      },
-      {
-        "title": "Appointments",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/appointments",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1789444800000,
-        "category": "visa",
-        "publishedLabel": "9/15",
-        "score": 10
-      }
-    ],
+    "visa": [],
     "international": [],
     "other": []
   }
