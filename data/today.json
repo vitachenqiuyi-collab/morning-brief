@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-09-23",
-  "generatedAt": "2026年9月23日 18:09 (Asia/Shanghai)",
+  "date": "2026-09-24",
+  "generatedAt": "2026年9月24日 13:39 (Asia/Shanghai)",
   "headline": {
     "title": "国家移民管理局部署全国边检机关全力做好中秋节国庆节假期口岸通关保障工作",
     "source": "国家移民管理局",
@@ -15,16 +15,6 @@
   "categories": {
     "flight": [],
     "visa": [
-      {
-        "title": "国家移民管理局关于全国推广网上办理外国人旅馆以外住宿登记的公告",
-        "source": "国家移民管理局",
-        "url": "https://www.nia.gov.cn/n897453/c1806111/content.html",
-        "summary": "根据《中华人民共和国出境入境管理法》第三十九条规定，外国人在中国境内旅馆住宿的，旅馆应当按照旅馆业治安管理的有关规定为其办理住宿登记，并向所在地公安机关报送外国人住宿登记信息；外国人在旅馆以外的其他住所居住或者住宿的，应当在入住后二十四小时内由本人或者留宿人，向居住地的公安机关办理登记。为进一步提升外国人在华生活便利度，方便在旅馆以外住宿的外国人办理住宿登记，结合前期试点情况，国家移民管理局决定自2026年9月21日起，在全国推广网上办理外国人旅馆以外住宿登记。",
-        "publishedAt": 1789963200000,
-        "category": "visa",
-        "publishedLabel": "9/21",
-        "score": 32
-      },
       {
         "title": "Skip to main content",
         "source": "冰岛移民局",
@@ -49,6 +39,16 @@
         "title": "Waiting time",
         "source": "冰岛移民局",
         "url": "https://island.is/en/o/directorate-of-immigration/waiting-time",
+        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
+        "publishedAt": 1790049600000,
+        "category": "visa",
+        "publishedLabel": "9/22",
+        "score": 32
+      },
+      {
+        "title": "Appointments",
+        "source": "冰岛移民局",
+        "url": "https://island.is/en/o/directorate-of-immigration/appointments",
         "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
         "publishedAt": 1790049600000,
         "category": "visa",
