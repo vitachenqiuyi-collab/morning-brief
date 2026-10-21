@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
   "date": "2026-10-21",
-  "generatedAt": "2026年10月21日 13:32 (Asia/Shanghai)",
+  "generatedAt": "2026年10月21日 18:22 (Asia/Shanghai)",
   "headline": {
     "title": "三季度1.92亿人次出入境 免签入境外国人同比增长24.1%",
     "source": "国家移民管理局",
@@ -10,7 +10,7 @@
     "publishedAt": 1792468800000,
     "category": "visa",
     "publishedLabel": "10/20",
-    "score": 68
+    "score": 40
   },
   "categories": {
     "flight": [],
@@ -23,7 +23,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Skip to main content",
@@ -33,7 +33,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Individuals",
@@ -43,7 +43,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Waiting time",
@@ -53,7 +53,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 60
+        "score": 32
       }
     ],
     "international": [],
