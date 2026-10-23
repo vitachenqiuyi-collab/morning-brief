@@ -1,20 +1,30 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-10-22",
-  "generatedAt": "2026年10月22日 18:21 (Asia/Shanghai)",
+  "date": "2026-10-23",
+  "generatedAt": "2026年10月23日 13:34 (Asia/Shanghai)",
   "headline": {
-    "title": "三季度1.92亿人次出入境 免签入境外国人同比增长24.1%",
-    "source": "国家移民管理局",
-    "url": "https://www.nia.gov.cn/n897453/c1820896/content.html",
-    "summary": "10月20日，国家移民管理局召开新闻发布会，发布2026年三季度移民管理主要数据。",
-    "publishedAt": 1792468800000,
-    "category": "visa",
-    "publishedLabel": "10/20",
-    "score": 40
+    "title": "民航运输保障企业",
+    "source": "中国民航局",
+    "url": "http://www.caac.gov.cn/GYMH/MHGK/BZQY/",
+    "summary": "ICP备案编号：京ICP备19046468号 京公网安备11010102007643号 政府网站识别码：bm70000001",
+    "publishedAt": 1792641600000,
+    "category": "flight",
+    "publishedLabel": "10/22",
+    "score": 60
   },
   "categories": {
     "flight": [],
     "visa": [
+      {
+        "title": "三季度1.92亿人次出入境 免签入境外国人同比增长24.1%",
+        "source": "国家移民管理局",
+        "url": "https://www.nia.gov.cn/n897453/c1820896/content.html",
+        "summary": "10月20日，国家移民管理局召开新闻发布会，发布2026年三季度移民管理主要数据。",
+        "publishedAt": 1792468800000,
+        "category": "visa",
+        "publishedLabel": "10/20",
+        "score": 18
+      },
       {
         "title": "一图读懂！2026年三季度移民管理工作主要数据",
         "source": "国家移民管理局",
@@ -23,7 +33,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 32
+        "score": 10
       },
       {
         "title": "Skip to main content",
@@ -33,7 +43,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 32
+        "score": 10
       },
       {
         "title": "Individuals",
@@ -43,17 +53,7 @@
         "publishedAt": 1792468800000,
         "category": "visa",
         "publishedLabel": "10/20",
-        "score": 32
-      },
-      {
-        "title": "Waiting time",
-        "source": "冰岛移民局",
-        "url": "https://island.is/en/o/directorate-of-immigration/waiting-time",
-        "summary": "Ísland.is er upplýsinga- og þjónustuveita opinberra aðila á Íslandi. Þar getur fólk og fyrirtæki fengið upplýsingar og notið margvíslegrar þjónustu hjá opinberum aðilum á einum stað í gegnum eina gátt.",
-        "publishedAt": 1792468800000,
-        "category": "visa",
-        "publishedLabel": "10/20",
-        "score": 32
+        "score": 10
       }
     ],
     "international": [],
