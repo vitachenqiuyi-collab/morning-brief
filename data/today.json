@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
   "date": "2026-10-28",
-  "generatedAt": "2026年10月28日 14:27 (Asia/Shanghai)",
+  "generatedAt": "2026年10月28日 19:27 (Asia/Shanghai)",
   "headline": {
     "title": "Skip to main content",
     "source": "冰岛移民局",
@@ -10,10 +10,21 @@
     "publishedAt": 1793073600000,
     "category": "visa",
     "publishedLabel": "10/27",
-    "score": 60
+    "score": 32
   },
   "categories": {
-    "flight": [],
+    "flight": [
+      {
+        "title": "民航运输保障企业",
+        "source": "中国民航局",
+        "url": "http://www.caac.gov.cn/GYMH/MHGK/BZQY/",
+        "summary": "ICP备案编号：京ICP备19046468号 京公网安备11010102007643号 政府网站识别码：bm70000001",
+        "publishedAt": 1792814400000,
+        "category": "flight",
+        "publishedLabel": "10/24",
+        "score": 10
+      }
+    ],
     "visa": [
       {
         "title": "Individuals",
@@ -23,7 +34,7 @@
         "publishedAt": 1793073600000,
         "category": "visa",
         "publishedLabel": "10/27",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Waiting time",
@@ -33,7 +44,7 @@
         "publishedAt": 1793073600000,
         "category": "visa",
         "publishedLabel": "10/27",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Appointments",
@@ -43,7 +54,7 @@
         "publishedAt": 1793073600000,
         "category": "visa",
         "publishedLabel": "10/27",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Applications and forms",
@@ -53,7 +64,7 @@
         "publishedAt": 1793073600000,
         "category": "visa",
         "publishedLabel": "10/27",
-        "score": 60
+        "score": 32
       }
     ],
     "international": [],
