@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
   "date": "2026-10-31",
-  "generatedAt": "2026年10月31日 14:28 (Asia/Shanghai)",
+  "generatedAt": "2026年10月31日 19:00 (Asia/Shanghai)",
   "headline": {
     "title": "民航运输保障企业",
     "source": "中国民航局",
@@ -10,7 +10,7 @@
     "publishedAt": 1793332800000,
     "category": "flight",
     "publishedLabel": "10/30",
-    "score": 60
+    "score": 32
   },
   "categories": {
     "flight": [],
