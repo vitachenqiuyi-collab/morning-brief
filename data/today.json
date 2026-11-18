@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-11-17",
-  "generatedAt": "2026年11月17日 22:43 (Asia/Shanghai)",
+  "date": "2026-11-18",
+  "generatedAt": "2026年11月18日 16:04 (Asia/Shanghai)",
   "headline": {
     "title": "Skip to main content",
     "source": "冰岛移民局",
@@ -10,7 +10,7 @@
     "publishedAt": 1794888000000,
     "category": "visa",
     "publishedLabel": "11/17",
-    "score": 60
+    "score": 32
   },
   "categories": {
     "flight": [],
@@ -23,7 +23,7 @@
         "publishedAt": 1794888000000,
         "category": "visa",
         "publishedLabel": "11/17",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Waiting time",
@@ -33,7 +33,7 @@
         "publishedAt": 1794888000000,
         "category": "visa",
         "publishedLabel": "11/17",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Appointments",
@@ -43,7 +43,7 @@
         "publishedAt": 1794888000000,
         "category": "visa",
         "publishedLabel": "11/17",
-        "score": 60
+        "score": 32
       },
       {
         "title": "Applications and forms",
@@ -53,7 +53,7 @@
         "publishedAt": 1794888000000,
         "category": "visa",
         "publishedLabel": "11/17",
-        "score": 60
+        "score": 32
       }
     ],
     "international": [],
