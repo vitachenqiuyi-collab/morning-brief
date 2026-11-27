@@ -1,7 +1,7 @@
 {
   "title": "环球出行晨报",
-  "date": "2026-11-26",
-  "generatedAt": "2026年11月26日 23:30 (Asia/Shanghai)",
+  "date": "2026-11-27",
+  "generatedAt": "2026年11月27日 17:17 (Asia/Shanghai)",
   "headline": {
     "title": "民航运输保障企业",
     "source": "中国民航局",
@@ -10,7 +10,7 @@
     "publishedAt": 1795665600000,
     "category": "flight",
     "publishedLabel": "11/26",
-    "score": 60
+    "score": 32
   },
   "categories": {
     "flight": [],
@@ -23,7 +23,7 @@
         "publishedAt": 1795492800000,
         "category": "visa",
         "publishedLabel": "11/24",
-        "score": 32
+        "score": 10
       },
       {
         "title": "Individuals",
@@ -33,7 +33,7 @@
         "publishedAt": 1795492800000,
         "category": "visa",
         "publishedLabel": "11/24",
-        "score": 32
+        "score": 10
       },
       {
         "title": "Waiting time",
@@ -43,7 +43,7 @@
         "publishedAt": 1795492800000,
         "category": "visa",
         "publishedLabel": "11/24",
-        "score": 32
+        "score": 10
       },
       {
         "title": "Appointments",
@@ -53,7 +53,7 @@
         "publishedAt": 1795492800000,
         "category": "visa",
         "publishedLabel": "11/24",
-        "score": 32
+        "score": 10
       }
     ],
     "international": [],
